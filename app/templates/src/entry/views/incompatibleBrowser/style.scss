@@ -1,0 +1,19 @@
+/* src/entry/views/incompatibleBrowser/style.scss */
+
+:global {
+    .incompatible-browser {
+        position: relative;
+        width: 100%;
+    }
+
+    .incompatible .incompatible-browser {
+        display: block;
+    }
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}

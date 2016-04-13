@@ -1,0 +1,12 @@
+/* src/entry/views/loader/style.scss */
+
+:global {
+    .loader {
+        display: none;
+        text-align: center;
+    }
+}
+
+.content {
+    padding: 10px;
+}

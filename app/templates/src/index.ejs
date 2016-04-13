@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <title>Project Title</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+
+    <link rel="shortcut icon" href="favicon.ico?ver=1.0.0">
+
+    <!-- incompatible browser -->
+    <style> .incompatible-browser { display: none; } </style>
+</head>
+
+<body>
+    <!-- incompatible browser -->
+    <div id="incompatible-browser" class="incompatible-browser">
+        Yout Browser is outdated. Please update your browser for better experience.
+    </div>
+    <!-- loader -->
+    <div class="loader"></div>
+    <!-- main app -->
+    <div class="container" ui-view></div>
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+    <!-- incompatible browser -->
+    <style> .no-js .incompatible-browser { display: block; } </style>
+</body>
+</html>

@@ -1,0 +1,3 @@
+/* src/entry/style/global/_fonts.scss */
+
+@include font-face('generica', '../../../assets/fonts/generica', $file-formats: eot woff ttf svg);
