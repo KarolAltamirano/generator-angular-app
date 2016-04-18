@@ -1,16 +1,26 @@
+/* g lobals inject */
+
 /*
+
+import chai from 'chai';
+// import sinon from 'sinon';
+
+var expect = chai.expect;
+
 describe('Services', function () {
-    var service;
+    describe('', function() {
+        var service;
 
-    beforeEach(angular.mock.module(''));
+        beforeEach(angular.mock.module(''));
 
-    beforeEach(inject(function (_service_) {
-        service = _service_;
-    }));
+        beforeEach(inject(function (_service_) {
+            service = _service_;
+        }));
 
-    it('check if `service` exists', function () {
-        expect(service).toBeDefined();
+        it('should exists', function () {
+            expect(service).to.exist;
+        });
     });
-
 });
+
 */

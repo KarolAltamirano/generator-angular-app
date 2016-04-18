@@ -27,22 +27,6 @@ loader.createLoader = function (id, progressCb, completeCb) {
 };
 
 /**
- * Create spy loader for unit tests
- *
- * @param  {String} id    - id of a loaderData
- * @param  {String} value - return value of the new loaderData
- */
-loader.createSpyLoader = function (id, value) {
-    if (_loaderList[id] != null) {
-        throw new Error('Loader with id: ' + id + ' already exists.');
-    }
-
-    _loaderList[id] = {
-        getResult: function () { return value; }
-    };
-};
-
-/**
  * Get loader by its id
  *
  * @param  {String} id - id of a loaderData

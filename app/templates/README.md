@@ -76,9 +76,14 @@ npm run e2e        : run e2e tests
     - "A CSS Module is a CSS file in which all class names and animation names are scoped locally by default."
 
 # SCSS Source maps
-Source maps are disabled for SCSS files because of an issue with style-loader
-([read more here](https://github.com/webpack/style-loader/issues/93)). As a workaround add to each
-SCSS file a comment containing its path.
+- Source maps are disabled for SCSS files because of an issue with style-loader
+  ([read more here](https://github.com/webpack/style-loader/issues/93)). As a workaround add to each
+  SCSS file a comment containing its path.
+- In case SCSS source map are necessary for debugging
+    - set `publicPath` inside `webpack.config.js` file to `http://localhost:3000/`
+    - enable source maps inside `webpack.config.js` as described
+      [here](https://github.com/jtangelder/sass-loader#source-maps)
+    - important: before committing revert these changes, do not push enabled source maps to the repo
 
 # Modernizr configuration
 - To configure modernizr change its settings inside `.modernizrrc`.
@@ -103,6 +108,7 @@ To bump version use npm task `npm run bump [ major | minor | patch ]`
 
 # Test
 Run unit tests with `npm test` or e2e tests with `npm run e2e`
+- Before running e2e test install `mocha` globally by running `npm install -g mocha`
 - Karma homepage: [show](https://karma-runner.github.io/0.13/index.html)
 - Protractor homepage: [show](https://angular.github.io/protractor/#/)
 
