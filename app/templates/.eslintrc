@@ -62,7 +62,7 @@
         "node": true,
         "browser": true,
         "commonjs": true,
-        "jasmine": true
+        "mocha": true
     },
     "extends": "eslint:recommended",
 

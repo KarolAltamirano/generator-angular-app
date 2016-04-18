@@ -1,13 +1,14 @@
 /* globals inject */
 
+import chai from 'chai';
+// import sinon from 'sinon';
+
 import angular from 'angular';
 import HomeCtrl from '../../src/app/views/home';
-import loader from '../../src/entry/utilities/loader';
+
+var expect = chai.expect;
 
 describe('Controllers', function () {
-
-    loader.createSpyLoader('main', 'spy loader data');
-
     describe('MyCtrl', function () {
         var $scope,
             testModule;
@@ -23,8 +24,8 @@ describe('Controllers', function () {
             $controller('HomeCtrl', { $scope: $scope });
         }));
 
-        it('Placeholder', function () {
-            expect($scope.style).toBeDefined();
+        it('should have style in $scope', function () {
+            expect($scope.style).to.exist;
         });
 
     });

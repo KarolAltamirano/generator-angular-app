@@ -1,26 +1,32 @@
 /* globals inject */
 
+import chai from 'chai';
+// import sinon from 'sinon';
+
+var expect = chai.expect;
+
 describe('Directives', function () {
 
-    var $compile,
-        $rootScope;
+    describe('ng-bind', function () {
+        var $compile,
+            $rootScope;
 
-    // beforeEach(angular.mock.module(''));
+        // beforeEach(angular.mock.module(''));
 
-    beforeEach(inject(function (_$compile_, _$rootScope_) {
-        $compile = _$compile_;
-        $rootScope = _$rootScope_;
-    }));
+        beforeEach(inject(function (_$compile_, _$rootScope_) {
+            $compile = _$compile_;
+            $rootScope = _$rootScope_;
+        }));
 
-    it('Placeholder', function () {
-        var scope = $rootScope.$new(),
-            element;
+        it('should contains Hello World string', function () {
+            var scope = $rootScope.$new(),
+                element;
 
-        scope.variable = 'Hello World';
-        element = $compile('<div ng-bind="variable"></div>')(scope);
-        scope.$digest();
+            scope.variable = 'Hello World';
+            element = $compile('<div ng-bind="variable"></div>')(scope);
+            scope.$digest();
 
-        expect(element.html()).toContain('Hello World');
+            expect(element.html()).to.have.string('Hello World');
+        });
     });
-
 });
