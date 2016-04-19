@@ -2,8 +2,7 @@
 
 'use strict';
 
-var chai = require('chai'),
-    expect = chai.expect;
+var expect = require('chai').expect;
 
 describe('HOME PAGE', function () {
     beforeEach(function () {

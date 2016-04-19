@@ -2,10 +2,8 @@
 
 /*
 
-import chai from 'chai';
+import { expect } from 'chai';
 // import sinon from 'sinon';
-
-var expect = chai.expect;
 
 describe('Filters', function () {
     describe('', function() {

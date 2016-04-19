@@ -1,9 +1,7 @@
 /* globals inject */
 
-import chai from 'chai';
+import { expect } from 'chai';
 // import sinon from 'sinon';
-
-var expect = chai.expect;
 
 describe('Directives', function () {
 

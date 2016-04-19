@@ -1,12 +1,10 @@
 /* globals inject */
 
-import chai from 'chai';
+import { expect } from 'chai';
 // import sinon from 'sinon';
 
 import angular from 'angular';
 import HomeCtrl from '../../src/app/views/home';
-
-var expect = chai.expect;
 
 describe('Controllers', function () {
     describe('MyCtrl', function () {
