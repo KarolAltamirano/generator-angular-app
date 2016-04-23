@@ -30,14 +30,14 @@ import loaderTemplate from './views/loader/template.html';
 import loaderStyle from './views/loader/style.scss';
 
 // set loader callbacks
-function progressCb(e) {
+function _progress(e) {
     var p = Math.round(100 * e.progress);
 
     // render progress in loader
     loader.render(loaderTemplate, loaderStyle, { loader: p + copy.loader.progress });
 }
 
-function completeCb() {
+function _complete() {
     // create new chunk
     require.ensure([], function (require) {
         var angular = require('angular'),
@@ -59,6 +59,6 @@ window.addEventListener('load', () => {
         loader.show();
 
         // start loader
-        loader.createLoader('main', progressCb, completeCb);
+        loader.createLoader('main', _progress, _complete);
     }
 });
