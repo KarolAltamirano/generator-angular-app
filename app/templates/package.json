@@ -73,7 +73,7 @@
     "build": "babel-node tools/run build",
     "server": "babel-node tools/run server",
     "start": "babel-node tools/run start",
-    "lint": "eslint src tools",
+    "lint": "eslint src test tools",
     "test": "karma start",
     "e2e": "protractor"
   },
