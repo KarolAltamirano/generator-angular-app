@@ -2,13 +2,20 @@ import loaderCommon from '../data/loaderCommon';
 import loaderNoRetina from '../data/loaderNoRetina';
 import loaderRetina from '../data/loaderRetina';
 
-var isRetina = window.devicePixelRatio > 1,
-    data;
+var _isRetina = window.devicePixelRatio > 1;
 
-if (isRetina) {
-    data = loaderCommon.concat(loaderRetina);
-} else {
-    data = loaderCommon.concat(loaderNoRetina);
-}
+var _mainLoaderData = function () {
+    var data;
 
-export default data;
+    if (_isRetina) {
+        data = loaderCommon.concat(loaderRetina);
+    } else {
+        data = loaderCommon.concat(loaderNoRetina);
+    }
+
+    return data;
+};
+
+export default {
+    'main': _mainLoaderData()
+};

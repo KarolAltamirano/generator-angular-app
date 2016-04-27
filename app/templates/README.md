@@ -26,8 +26,8 @@ Project was generated with Yeoman generator
 ├─── assets                  : assets
 │   ├─── fonts                 : fonts
 │   ├─── images                : images
-│   └─── scss-sprite           : scss that contains images encoded in base64, loaded with PreloadJS
-│       └─── images              : images for scss-sprite
+│   └─── scssSprite            : scss that contains images encoded in base64, loaded with PreloadJS
+│       └─── images              : images for scssSprite
 ├─── copy                    : app copy
 └─── entry                   : app entry point (starts loader and run angular app)
  ├─── data                     : loader configuration

@@ -13,8 +13,8 @@ import viewHomeCtrl from './views/home';
 import viewHomeTemplate from './views/home/template.html';
 import viewPageCtrl from './views/page';
 import viewPageTemplate from './views/page/template.html';
-import viewSubpageCtrl from './views/page-subpage';
-import viewSubpageTemplate from './views/page-subpage/template.html';
+import viewPageDetailCtrl from './views/page.detail';
+import viewPageDetailTemplate from './views/page.detail/template.html';
 
 /**
  * Register main angular app
@@ -41,15 +41,15 @@ export default angular.module('app', [
                 controller: viewHomeCtrl,
                 template: viewHomeTemplate
             })
-            .state('app.page1', {
-                url: '/page1',
+            .state('app.page', {
+                url: '/page',
                 controller: viewPageCtrl,
                 template: viewPageTemplate
             })
-            .state('app.page1.detail', {
+            .state('app.page.detail', {
                 url: '/detail',
-                controller: viewSubpageCtrl,
-                template: viewSubpageTemplate
+                controller: viewPageDetailCtrl,
+                template: viewPageDetailTemplate
             });
 
         $urlRouterProvider.otherwise('/');

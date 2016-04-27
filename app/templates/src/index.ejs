@@ -11,12 +11,12 @@
     <link rel="shortcut icon" href="favicon.ico?ver=1.0.0">
 
     <!-- incompatible browser -->
-    <style> .incompatible-browser { display: none; } </style>
+    <style> .incompatibleBrowser { display: none; } </style>
 </head>
 
 <body>
     <!-- incompatible browser -->
-    <div id="incompatible-browser" class="incompatible-browser">
+    <div id="incompatibleBrowser" class="incompatibleBrowser">
         Yout Browser is outdated. Please update your browser for better experience.
     </div>
     <!-- loader -->
@@ -27,6 +27,6 @@
     <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
     <% } %>
     <!-- incompatible browser -->
-    <style> .no-js .incompatible-browser { display: block; } </style>
+    <style> .no-js .incompatibleBrowser { display: block; } </style>
 </body>
 </html>

@@ -1,7 +1,7 @@
 import planeImg from '../../assets/images/plane.png';
-import sprite from '../../assets/scss-sprite/assets-no-retina.scss';
+import sprite from '../../assets/scssSprite/assetsNoRetina.scss';
 
 export default [
-    { id: 'scss-sprite', src: sprite },
+    { id: 'scssSprite', src: sprite },
     { id: 'plane', type: 'binary', mimeType: 'image/png', src: planeImg }
 ];

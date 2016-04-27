@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-export default ['.view-change-animate', function () {
+export default ['.viewChangeAnimate', function () {
     'ngInject';
 
     return {

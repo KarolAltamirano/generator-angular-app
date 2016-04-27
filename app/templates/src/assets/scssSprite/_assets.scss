@@ -1,11 +1,11 @@
-/* src/assets/scss-sprite/_assets.scss */
+/* src/assets/scssSprite/_assets.scss */
 
 @import 'mixin';
 
-.asset-img-1 {
+.assetImg01 {
     @include retina-inline-asset('IMG-1', 'jpg');
 }
 
-.asset-img-2 {
+.assetImg02 {
     @include retina-inline-asset('IMG-2', 'jpg');
 }
