@@ -57,8 +57,8 @@ export default {
             },
             {
                 test: /\.scss$/,
-                include: path.resolve(__dirname, 'src', 'assets', 'scss-sprite'),
-                loader: 'file?name=css-sprite/[name]---[hash].css!postcss!sass!sass-resources'
+                include: path.resolve(__dirname, 'src', 'assets', 'scssSprite'),
+                loader: 'file?name=cssSprite/[name]---[hash].css!postcss!sass!sass-resources'
             },
             { test: /\.modernizrrc$/, loader: 'modernizr' },
             { test: /.*gsap.*/, loader: 'imports?gs=>window.GreenSockGlobals={}!exports?gs' },

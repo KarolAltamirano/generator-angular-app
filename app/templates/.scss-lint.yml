@@ -15,3 +15,7 @@ linters:
 
     Comment:
         enabled: false
+
+    SelectorFormat:
+        enabled: true
+        convention: camel_case

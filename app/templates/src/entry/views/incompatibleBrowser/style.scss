@@ -1,12 +1,12 @@
 /* src/entry/views/incompatibleBrowser/style.scss */
 
 :global {
-    .incompatible-browser {
+    .incompatibleBrowser {
         position: relative;
         width: 100%;
     }
 
-    .incompatible .incompatible-browser {
+    .incompatible .incompatibleBrowser {
         display: block;
     }
 }

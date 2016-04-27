@@ -55,7 +55,7 @@ incompatible.addClass = function () {
  */
 incompatible.render = function (template, style, copy) {
     var output = Mustache.render(template, { style, copy }),
-        el = document.getElementById('incompatible-browser');
+        el = document.getElementById('incompatibleBrowser');
 
     if (incompatible.isIncompatibleBrowser()) {
         el.innerHTML = output;

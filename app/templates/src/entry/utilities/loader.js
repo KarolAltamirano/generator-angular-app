@@ -4,26 +4,32 @@ import loaderData from './loaderData';
 
 var loader = {},
     _loaderList = {},
+    _cache = {},
     _loaderElement = document.querySelector('.loader');
 
 /**
  * Create loader
  *
- * @param  {String}   id         - id of new loader
- * @param  {Function} progressCb - callback function during loading
- * @param  {Function} completeCb - callback function when loading is completed
+ * @param  {String}   id       - id of new loader
+ * @param  {Function} progress - callback function during loading
+ * @param  {Function} complete - callback function when loading is completed
  */
-loader.createLoader = function (id, progressCb, completeCb) {
+loader.createLoader = function (id, progress, complete) {
     if (_loaderList[id] != null) {
         throw new Error('Loader with id: ' + id + ' already exists.');
     }
 
+    if (loaderData[id] == null) {
+        throw new Error(`No data was found for loader with id '${id}'`);
+    }
+
+    _cache[id] = [];
+
     _loaderList[id] = new createjs.LoadQueue(true);
 
-    _loaderList[id].addEventListener('progress', progressCb);
-    _loaderList[id].addEventListener('complete', completeCb);
-
-    _loaderList[id].loadManifest(loaderData);
+    _loaderList[id].addEventListener('progress', progress);
+    _loaderList[id].addEventListener('complete', complete);
+    _loaderList[id].loadManifest(loaderData[id]);
 };
 
 /**
@@ -40,30 +46,59 @@ loader.getLoader = function (id) {
 };
 
 /**
- * Load asset from loaderId
+ * Check if loader with id exists
  *
- * @param {String} loaderId - id of loaderId
+ * @param  {String} id - id of the loader
+ */
+loader.exists = function (id) {
+    return _loaderList[id] != null;
+};
+
+/**
+ * Get asset from loader
+ *
+ * @param {String} loaderId - id of the loader
  * @param {String} assetId  - id of asset
  */
-loader.loadAsset = function (loaderId, assetId) {
-    var asset = loaderData.filter(element => element.id === assetId)[0];
+loader.getAsset = function (loaderId, assetId) {
+    var cachedAsset = _cache[loaderId].find(element => element.id === assetId);
 
-    return URL.createObjectURL(
-                new Blob([loader.getLoader(loaderId).getResult(assetId)], { type: asset.mimeType })
-            );
+    if (cachedAsset) {
+        return cachedAsset.url;
+    }
+
+    var asset = loaderData[loaderId].find(element => element.id === assetId);
+    var newAssetURL = URL.createObjectURL(
+        new Blob([loader.getLoader(loaderId).getResult(assetId)], {
+            type: asset.mimeType
+        })
+    );
+
+    _cache[loaderId].push({
+        id: assetId,
+        url: newAssetURL
+    });
+
+    return newAssetURL;
 };
 
 /**
  * Destroy loaded asset
  *
- * @param {String} objectURL - url to asset created with loadAsset
+ * @param {String} loaderId - id of the loader
+ * @param {String} assetId  - id of asset
  */
-loader.destroyAsset = function (objectURL) {
-    URL.revokeObjectURL(objectURL);
+loader.destroyAsset = function (loaderId, assetId) {
+    var cachedAsset = _cache[loaderId].find(element => element.id === assetId);
+
+    if (cachedAsset) {
+        _cache[loaderId].splice(_cache[loaderId].indexOf(cachedAsset), 1);
+        URL.revokeObjectURL(cachedAsset.url);
+    }
 };
 
 /**
- * Render version info to the DOM
+ * Render loader to the DOM
  *
  * @param  {String} template - thml template
  * @param  {Object} style    - css style object
@@ -72,7 +107,7 @@ loader.destroyAsset = function (objectURL) {
 loader.render = function (template, style, copy) {
     var output = Mustache.render(template, { style, copy });
 
-    document.querySelector('.loader').innerHTML = output;
+    _loaderElement.innerHTML = output;
 };
 
 /**
