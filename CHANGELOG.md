@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v0.2.0 - 2016-04-29
+- Improve file naming conventions
+
 ## v0.1.4 - 2016-04-27
 - Improve asset loader
 - Use camelCase for css selectors (it works better with css modules)
