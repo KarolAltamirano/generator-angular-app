@@ -5,7 +5,7 @@ import webpackConfig from './webpack.config.js';
 var config = extend(true, {}, webpackConfig, {
     entry: [
         'webpack-hot-middleware/client?reload=true&quiet=true',
-        './src/entry/index.js'
+        './src/entry/main.js'
     ],
 
     devtool: '#cheap-module-source-map',

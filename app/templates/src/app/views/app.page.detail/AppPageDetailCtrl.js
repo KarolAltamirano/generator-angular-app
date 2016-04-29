@@ -1,4 +1,4 @@
-import style from './style.scss';
+import style from './appPageDetailView.scss';
 import loader from '../../../entry/utilities/loader';
 
 export default function ($scope) {

@@ -16,7 +16,7 @@ var loader = {},
  */
 loader.createLoader = function (id, progress, complete) {
     if (_loaderList[id] != null) {
-        throw new Error('Loader with id: ' + id + ' already exists.');
+        throw new Error(`Loader with id: '${id}' already exists.`);
     }
 
     if (loaderData[id] == null) {
@@ -39,7 +39,7 @@ loader.createLoader = function (id, progress, complete) {
  */
 loader.getLoader = function (id) {
     if (_loaderList[id] == null) {
-        throw new Error('Loader with id: ' + id + ' does not exist.');
+        throw new Error(`Loader with id: '${id}' does not exist.`);
     }
 
     return _loaderList[id];

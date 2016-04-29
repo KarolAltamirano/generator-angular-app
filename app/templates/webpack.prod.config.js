@@ -3,7 +3,7 @@ import webpack from 'webpack';
 import webpackConfig from './webpack.config.js';
 
 var config = extend(true, {}, webpackConfig, {
-    entry: './src/entry/index.js',
+    entry: './src/entry/main.js',
 
     plugins: webpackConfig.plugins.concat([
         new webpack.DefinePlugin({

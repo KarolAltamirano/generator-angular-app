@@ -1,5 +1,5 @@
-import template from './template.html';
-import style from './style.scss';
+import template from './templateDirective.html';
+import style from './templateDirective.scss';
 
 export default ['mdTemplateDirective', function () {
     'ngInject';
