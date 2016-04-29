@@ -3,6 +3,6 @@ import ngAnimate from 'angular-animate';
 
 import routerAnimation from './routerAnimation';
 
-export default angular.module('appAnimations', [ngAnimate])
+export default angular.module('animations', [ngAnimate])
     .animation(...routerAnimation)
     .name;

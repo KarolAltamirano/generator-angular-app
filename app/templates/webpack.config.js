@@ -70,5 +70,5 @@ export default {
         return [assets, autoprefixer({ browsers: config.autoprefixer })];
     },
 
-    sassResources: path.resolve(__dirname, 'src', 'entry', 'style', 'shared', 'style.scss')
+    sassResources: path.resolve(__dirname, 'src', 'entry', 'style', 'shared', 'shared.scss')
 };

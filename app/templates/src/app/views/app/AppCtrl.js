@@ -1,4 +1,4 @@
-import style from './style.scss';
+import style from './appView.scss';
 
 export default function ($scope) {
     'ngInject';
