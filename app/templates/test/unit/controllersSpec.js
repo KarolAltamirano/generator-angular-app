@@ -4,7 +4,7 @@ import { expect } from 'chai';
 // import sinon from 'sinon';
 
 import angular from 'angular';
-import HomeCtrl from '../../src/app/views/home';
+import HomeCtrl from '../../src/app/views/app.home/AppHomeCtrl';
 
 describe('Controllers', function () {
     describe('MyCtrl', function () {

@@ -17,7 +17,7 @@
 ### Requirements
 - NodeJS v4.0 or newer
 - npm v3.3 or newer
-- yo (to install run `npm install -g yo`)
+- yo (to install run `npm install -g yo`, to update run `npm update -g yo`)
 
 ### Installation
 - Install: `npm install -g generator-angular-app`

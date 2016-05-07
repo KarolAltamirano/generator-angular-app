@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v0.2.1 - 2016-05-07
+- Remove Bourbon Sass library
+- Add Susy Sass library
+- Add Breakpoint Sass library
+- Update asset loader to support fallback mode
+
 ## v0.2.0 - 2016-04-29
 - Improve file naming conventions
 

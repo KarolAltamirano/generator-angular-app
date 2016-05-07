@@ -14,8 +14,6 @@ var generators = require('yeoman-generator'),
 
 module.exports = generators.Base.extend({
     prompting: function () {
-        var done = this.async();
-
         this.log(yosay('Welcome to the ' + chalk.green('AngularJS') + ' generator!'));
 
         var prompts = [
@@ -27,9 +25,8 @@ module.exports = generators.Base.extend({
             }
         ];
 
-        this.prompt(prompts, function (props) {
+        return this.prompt(prompts).then(function (props) {
             this.props = props;
-            done();
         }.bind(this));
     },
 

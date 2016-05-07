@@ -134,32 +134,18 @@ Use linter in your text editor for JavaScript, SCSS and HTML.
 - HTMLHint for Atom - [show](https://github.com/AtomLinter/linter-htmlhint)
 - HTMLHint for Sublime Text - [show](https://github.com/mmaday/SublimeLinter-contrib-htmlhint)
 
-# Bourbon
-Mixin library for Sass. Check Bourbon [homepage](http://bourbon.io/) for more details and documentation.
-**Do not use Bourbon mixins for Vendor Prefixes!** SCSS build uses `autoprefixer` for them.
+# Susy and Breakpoint
+- To create page layout use Susy. Susy is Sass library for creating powerful, custom layouts.
+  For more information check out Susy [homepage](http://susy.oddbird.net/).
+- For creating breakpoints use Susy mixin `susy-breakpoint`. The mixin uses internally
+  Sass library Breakpoint. Check out Breakpoint [homepage](http://breakpoint-sass.com/) for
+  all possible queries.
 
-Examples:
-```
-HiDPI Media Query:
-
-    @include hidpi(1.5) {
-        width: 20em;
-    }
-
-Font Face:
-
-    @include font-face('generica', '../assets/fonts/generica', $file-formats: eot woff ttf svg);
-
-Retina Image:
-
-    @retina-image($filename, $background-size, $extension*, $retina-filename*, $retina-suffix*, $asset-pipeline*)
-
-    Argument Defaults:
-        $extension: png
-        $retina-filename: null
-        $retina-suffix: _2x
-        $asset-pipeline: false
-```
+# Assets mixins
+- `@include retina-inline-asset($name, $ext: 'png')` mixin for generating css with background
+  image encoded in base64 for non-retina and retina screens used in scssSprite.
+- `@include retina-asset($name, $ext: 'png')` mixin for generating stile with background
+  image for non-retina and retina screens.		
 
 # Hot Module Replacement (experimental)
 HMR is not enabled for any file by default. To enable HMR for particular file add following code
