@@ -8,6 +8,19 @@ var loader = {},
     _loaderElement = document.querySelector('.loader');
 
 /**
+ * Check if loader should be run in fallback mode
+ *
+ * @return {Boolean}
+ */
+function _runFallback() {
+    var result = false;
+
+    // NOTE: set exceptions to run loader in fallback mode for particular devices if needed
+
+    return result;
+}
+
+/**
  * Create loader
  *
  * @param  {String}   id       - id of new loader
@@ -23,9 +36,20 @@ loader.createLoader = function (id, progress, complete) {
         throw new Error(`No data was found for loader with id '${id}'`);
     }
 
+    // don't load as a binnary data in fallback mode
+    if (_runFallback()) {
+        loaderData[id] = loaderData[id].map((item) => {
+            if (item.type === 'binary') {
+                item.type = undefined;
+            }
+            return item;
+        });
+    }
+
     _cache[id] = [];
 
-    _loaderList[id] = new createjs.LoadQueue(true);
+    // create loader - dont use xhr in fallback mode
+    _loaderList[id] = new createjs.LoadQueue(!_runFallback());
 
     _loaderList[id].addEventListener('progress', progress);
     _loaderList[id].addEventListener('complete', complete);
@@ -68,6 +92,12 @@ loader.getAsset = function (loaderId, assetId) {
     }
 
     var asset = loaderData[loaderId].find(element => element.id === assetId);
+
+    // don't create blob in fallback mode
+    if (_runFallback()) {
+        return asset.src;
+    }
+
     var newAssetURL = URL.createObjectURL(
         new Blob([loader.getLoader(loaderId).getResult(assetId)], {
             type: asset.mimeType

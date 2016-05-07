@@ -37,7 +37,7 @@ export default {
             { test: /\.js$/, exclude: /node_modules/, loader: 'ng-annotate!babel' },
             { test: /\.json$/, loader: 'json' },
             { test: /\.html$/, loader: 'html' },
-            { test: /\.(eot|woff(2)?|ttf|svg)$/, loader: 'file?name=fonts/[name]---[hash].[ext]' },
+            { test: /\.(eot|woff(2)?|ttf|svg)(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=fonts/[name]---[hash].[ext]' },
             { test: /\.(png|jpg)$/, loader: 'file?name=images/[name]---[hash].[ext]' },
             { test: /\.(mp3|mp4|webm|ogg)$/, loader: 'file?name=media/[name]---[hash].[ext]' },
             { test: /\.css$/, loader: 'style!css?importLoaders=1!postcss' },
