@@ -99,7 +99,6 @@ npm run e2e        : run e2e tests
 ```  
 buildDir     : Directory where built page will be placed (default 'dist')
 autoprefixer : Configuration of autoprefixer
-root         : List of files to copy to website root folder
 ```
 
 # Build version
