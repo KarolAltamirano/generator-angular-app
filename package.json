@@ -1,7 +1,7 @@
 {
   "name": "generator-angular-app",
   "version": "0.2.2",
-  "description": "Yeoman generator for AngularJS + Webpack, ES6, Babel, npm Scripts, CSS Modules",
+  "description": "Yeoman generator for creating interactive web sites with AngularJS + Webpack, ES6, Babel, npm Scripts, CSS Modules",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "KarolAltamirano/generator-angular-app",
