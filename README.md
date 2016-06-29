@@ -1,9 +1,12 @@
 # AngularJS generator
-> Yeoman generator for AngularJS + Webpack, ES6, Babel, npm Scripts, CSS Modules
+> Yeoman generator for creating interactive web sites with AngularJS + Webpack, ES6, Babel, npm Scripts, CSS Modules
 
 [![Build Status](https://travis-ci.org/KarolAltamirano/generator-angular-app.svg?branch=master)](https://travis-ci.org/KarolAltamirano/generator-angular-app)
 [![Dependency Status](https://david-dm.org/KarolAltamirano/generator-angular-app.svg)](https://david-dm.org/KarolAltamirano/generator-angular-app)
 [![npm version](https://badge.fury.io/js/generator-angular-app.svg)](https://badge.fury.io/js/generator-angular-app)
+
+## About generator
+Generator helps you bootstrap new interactive web site project. It contains asset loader and browser version detection.
 
 ## Features
 - AngularJS
