@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v0.3.0 - 2016-06-29
+- Update dependencies
+- Use CamelCase for Singeltones
+- Add tern file
+- Add babel transform-object-rest-spread
+- Add sourcemaps to production build
+
 ## v0.2.2 - 2016-05-11
 - Refactor adding favicon
 
