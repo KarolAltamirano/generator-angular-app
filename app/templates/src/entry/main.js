@@ -25,7 +25,7 @@ version.logConsole();
 version.render(versionTemplate, versionStyle, version.getCopy());
 
 // render loader
-import loader from './utilities/loader';
+import Loader from './utilities/Loader';
 import loaderTemplate from './views/loader/loader.html';
 import loaderStyle from './views/loader/loader.scss';
 
@@ -34,7 +34,7 @@ function _progress(e) {
     var p = Math.round(100 * e.progress);
 
     // render progress in loader
-    loader.render(loaderTemplate, loaderStyle, { loader: p + copy.loader.progress });
+    Loader.render(loaderTemplate, loaderStyle, { loader: p + copy.loader.progress });
 }
 
 function _complete() {
@@ -44,7 +44,7 @@ function _complete() {
             app = require('../app/app').default;
 
         // hide loader
-        loader.hide();
+        Loader.hide();
 
         // run app
         angular.bootstrap(document, [app], { strictDi: true });
@@ -55,10 +55,10 @@ function _complete() {
 window.addEventListener('load', () => {
     if (!Incompatible.isIncompatibleBrowser()) {
         // show loader
-        loader.render(loaderTemplate, loaderStyle, { loader: copy.loader.start });
-        loader.show();
+        Loader.render(loaderTemplate, loaderStyle, { loader: copy.loader.start });
+        Loader.show();
 
         // start loader
-        loader.createLoader('main', _progress, _complete);
+        Loader.createLoader('main', _progress, _complete);
     }
 });
