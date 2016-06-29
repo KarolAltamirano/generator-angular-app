@@ -5,6 +5,8 @@ import webpackConfig from './webpack.config.js';
 var config = extend(true, {}, webpackConfig, {
     entry: './src/entry/main.js',
 
+    devtool: '#source-map',
+
     plugins: webpackConfig.plugins.concat([
         new webpack.DefinePlugin({
             'process.env': { NODE_ENV: JSON.stringify('production') }
