@@ -1,9 +1,9 @@
 import style from './appPageDetailView.scss';
-import loader from '../../../entry/utilities/loader';
+import Loader from '../../../entry/utilities/Loader';
 
 export default function ($scope) {
     'ngInject';
 
     $scope.style = style;
-    $scope.img = loader.getAsset('main', 'img');
+    $scope.img = Loader.getAsset('main', 'img');
 }
