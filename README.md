@@ -6,7 +6,7 @@
 [![npm version](https://badge.fury.io/js/generator-angular-app.svg)](https://badge.fury.io/js/generator-angular-app)
 
 ## About generator
-Generator helps you bootstrap new interactive web site project. It contains asset loader and browser version detection.
+Generator helps you initialize new interactive web site project. It contains asset loader and browser version detection.
 
 ## Features
 - AngularJS
