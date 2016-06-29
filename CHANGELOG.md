@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v0.3.1 - 2016-06-29
+- Update readme
+
 ## v0.3.0 - 2016-06-29
 - Update dependencies
 - Use CamelCase for Singeltones
