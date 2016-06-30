@@ -19,6 +19,7 @@
 .gitkeep text eol=lf
 .modernizrrc text eol=lf
 .tern-project text eol=lf
+.htmlhintrc text eol=lf
 
 # Binary files
 *.ico binary
