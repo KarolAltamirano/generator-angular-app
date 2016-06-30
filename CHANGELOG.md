@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v0.3.2 - 2016-06-30
+- Add .gitattributes file
+- Update .editorconfig to force lf line ending
+
 ## v0.3.1 - 2016-06-29
 - Update readme
 
