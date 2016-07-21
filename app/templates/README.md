@@ -117,7 +117,6 @@ Use linter in your text editor for JavaScript, SCSS and HTML.
 ## JavaScript
 - For JavaScript use [ESLint](http://eslint.org/). The project contains ESLint configuration
   file `.eslintrc`
-- Use ESLint version 2.x.x
 - ESLint for Atom - [show](https://github.com/AtomLinter/linter-eslint)
 - ESLint for Sublime Text - [show](https://github.com/roadhump/SublimeLinter-eslint)
 
